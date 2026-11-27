@@ -22,7 +22,11 @@ webcam frame
 If your gaze leaves a 20° cone around the calibrated direction, **or** your head turns more
 than 15°, for more than **2 seconds**, it shows **ATTENTION LOST** and beeps.
 
-![studio view](docs/studio.png)
+![Studio view: watching the screen, on task](docs/on-task.jpg)
+
+When attention moves away for more than 2 seconds:
+
+![Studio view: attention lost](docs/attention-lost.jpg)
 
 **Use cases:** online exam proctoring, driver distraction alerts, control-room and
 CCTV operators, e-learning engagement, focus tracking.
