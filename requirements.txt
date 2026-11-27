@@ -1,0 +1,15 @@
+# Runtime (what the monitor needs)
+numpy>=1.26
+opencv-python>=4.9
+pillow>=10
+
+# ONNX Runtime with the CUDA 12 runtime and cuDNN as pip packages (no CUDA toolkit
+# install needed). Pinned for GPU compatibility:
+#  - onnxruntime-gpu >= 1.25 is built for CUDA 13, which drops Pascal (GTX 10-series).
+#  - cuDNN >= 9.11 fails on Pascal at execution time; 9.10.2 is what PyTorch cu126 ships.
+# On a Turing or newer GPU (RTX 20-series and up) the latest versions work too.
+onnxruntime-gpu[cuda,cudnn]==1.24.4
+nvidia-cudnn-cu12==9.10.2.21
+
+# Android phone camera over USB (--source phone): H.264 decoding
+av>=12

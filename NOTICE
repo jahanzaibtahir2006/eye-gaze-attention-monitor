@@ -1,0 +1,22 @@
+Eye Gaze Attention Monitor
+Copyright 2026 the Eye Gaze Attention Monitor authors
+
+This project is a desktop-GPU port of "Eye Gaze Attention Monitoring on the
+Dragonwing IQ-9075" by Samuel Alexander
+(https://github.com/SamuelAlexander/dragonwing-gaze-attention), licensed under the
+Apache License 2.0. The pipeline design, pre/post-processing geometry, thresholds and
+attention state machine originate there.
+
+Changes from the original:
+- Models exported to ONNX and run on NVIDIA GPUs with ONNX Runtime (CUDA), instead
+  of TFLite on the Qualcomm Hexagon NPU.
+- EyeGaze exported with a dynamic batch and without its unused heatmap output, so
+  both eyes run in a single GPU call.
+- Threaded webcam capture, non-blocking calibration, H.264 recording, studio and
+  pipeline visualisations, live attention timeline, CSV logging, tests.
+
+Models (Qualcomm AI Hub, BSD-3-Clause): EyeGaze, Lightweight-Face-Detection
+(face_det_lite), Facial-Landmark-Detection (facemap_3dmm).
+
+Sample media in samples/: see samples/SOURCES.md (Pexels license; Qualcomm AI Hub
+demo asset, BSD-3-Clause).

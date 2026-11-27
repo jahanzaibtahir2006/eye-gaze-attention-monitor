@@ -1,0 +1,8 @@
+# No NVIDIA GPU (Intel/AMD graphics, macOS, or CPU-only Linux): plain ONNX Runtime.
+numpy>=1.26
+opencv-python>=4.9
+pillow>=10
+onnxruntime>=1.20
+
+# Android phone camera over USB (--source phone): H.264 decoding
+av>=12

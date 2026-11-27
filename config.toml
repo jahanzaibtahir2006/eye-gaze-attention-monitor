@@ -1,0 +1,32 @@
+# Defaults for gaze-monitor. Any command-line option overrides these.
+# Personal overrides go in config.local.toml (same keys, not committed to git).
+
+# A webcam index like "0", "phone" (Android phone camera over USB, see the README;
+# falls back to webcam 0 if no phone is found), or a path to a video file.
+source = "0"
+width = 1280            # webcam only
+height = 720            # webcam only
+camera-fps = 30
+
+phone-facing = "front"  # "front" (selfie) or "back"
+phone-size = 1920       # longest side of the phone stream
+phone-rotate = 0        # 0 / 90 / 180 / 270; press O in the window to rotate live
+# scrcpy-dir = 'C:\Users\you\Downloads\scrcpy-win64-v5.0.1\scrcpy-win64-v5.0.1'
+
+device = "cuda"         # "cuda" (NVIDIA GPU) or "cpu"
+view = "studio"         # "studio", "monitor" or "pipeline"
+title = "Eye Gaze Attention Monitor"
+
+# Attention thresholds (degrees / seconds). The defaults come from the reference
+# implementation's measurements on real desk footage: on task the calibrated gaze
+# stays within ~15 deg and the head within ~5 deg.
+cone = 20.0
+head-limit = 15.0
+alert-after = 2.0
+
+# Run the face detector every N frames; the box is reused in between. For a seated
+# user, every 3rd frame moves the gaze by under 2 degrees (reference measurements)
+# against a model error of ~15 degrees, and buys ~4 ms per frame.
+detect-every = 3
+calib-seconds = 3.0
+record-fps = 30.0
